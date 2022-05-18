@@ -87,7 +87,7 @@ func main() {
 
 				err := chromedp.Run(ctx,
 					chromedp.Navigate(requestURL+hasQuery(requestURL)+URLpayload),
-					chromedp.Evaluate("window.xxx", &res),
+					chromedp.Evaluate("xxx", &res),
 				)
 				//fmt.Println(requestURL + hasQuery(requestURL) + URLpayload)
 
